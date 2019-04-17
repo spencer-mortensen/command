@@ -1,0 +1,17 @@
+#!/usr/bin/env php
+<?php
+
+namespace SpencerMortensen\Command;
+
+require __DIR__ . '/autoload.php';
+
+$arguments = new Arguments();
+
+$executable = $arguments->getExecutable();
+$options = $arguments->getOptions();
+$values = $arguments->getValues();
+
+// Run this example: ./arguments --flag --option=value -f -ghi=value value
+echo "executable: ", json_encode($executable), "\n";
+echo "options: ", json_encode($options), "\n";
+echo "values: ", json_encode($values), "\n";
