@@ -71,7 +71,7 @@ class Arguments
 
 	private function getLongOption(string $argument): bool
 	{
-		$pattern = '~^--(?<key>[a-z-]+)(?:=(?<value>.*))?$~XADs';
+		$pattern = '~^--(?<key>[a-zA-Z_-]+)(?:=(?<value>.*))?$~XADs';
 
 		if (preg_match($pattern, $argument, $match) !== 1) {
 			return false;
@@ -87,7 +87,7 @@ class Arguments
 
 	private function getShortOption(string $argument): bool
 	{
-		$pattern = '~^-(?<keys>[a-z-]+)(?:=(?<value>.*))?$~XADs';
+		$pattern = '~^-(?<keys>[a-zA-Z]+)(?:=(?<value>.*))?$~XADs';
 
 		if (preg_match($pattern, $argument, $match) !== 1) {
 			return false;
